@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MM HALAL MEAT - অনলাইন অর্ডার (온라인 주문)</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Noto Sans Bengali & Noto Sans KR -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        emerald: {
+                            850: '#064e3b',
+                            950: '#022c22',
+                        },
+                        gold: {
+                            50: '#fffbeb',
+                            100: '#fef3c7',
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Noto Sans Bengali', 'Noto Sans KR', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Noto Sans Bengali', 'Noto Sans KR', sans-serif;
+            background-color: #f6f8f7;
+        }
+        button, input, textarea {
+            touch-action: manipulation;
+        }
+    </style>
+</head>
+<body class="text-slate-800 antialiased min-h-screen pb-14">
+
+    <!-- Header Section -->
+    <header class="bg-gradient-to-br from-emerald-950 via-emerald-900 to-emerald-800 text-white shadow-xl sticky top-0 z-50 border-b border-emerald-700/60">
+        <div class="max-w-3xl mx-auto px-4 py-4">
+            <div class="flex items-center justify-between gap-3">
+                <div class="flex items-center gap-3">
+                    <div class="bg-amber-400/20 border border-amber-400/40 p-2.5 rounded-2xl text-2xl shadow-inner">
+                        🥩
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-2 flex-wrap">
+                            <h1 class="text-xl sm:text-2xl font-extrabold tracking-tight text-white">MM HALAL MEAT</h1>
+                            <span class="bg-amber-400 text-emerald-950 text-[11px] font-extrabold px-2 py-0.5 rounded-full">100% HALAL</span>
+                        </div>
+                        <p class="text-xs text-emerald-100 mt-0.5 flex items-center gap-1.5">
+                            <i class="fa-solid fa-location-dot text-amber-400"></i>
+                            <span>강원도 영월군 북면 1길 50</span>
+                        </p>
+                    </div>
+                </div>
+                <a href="tel:01040123303" class="bg-amber-400 hover:bg-amber-300 text-emerald-950 font-bold px-3.5 py-2.5 rounded-xl text-xs sm:text-sm flex items-center gap-1.5 shadow-md transition active:scale-95 shrink-0">
+                    <i class="fa-solid fa-phone-volume"></i>
+                    <span>010-4012-3303</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="max-w-3xl mx-auto px-4 mt-5">
+
+        <!-- Delivery Offer & Instruction Banner -->
+        <div class="bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200 rounded-2xl p-4 mb-6 shadow-sm">
+            <div class="flex items-start gap-3">
+                <div class="bg-amber-500 text-white w-9 h-9 rounded-xl flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
+                    <i class="fa-solid fa-truck-fast"></i>
+                </div>
+                <div class="text-sm text-amber-950 leading-relaxed">
+                    <p class="font-bold text-base text-amber-900">🚚 ডেলিভারি চার্জ অফার (배송비 안내)</p>
+                    <p class="mt-0.5">• <strong>৫ কেজি (5kg) বা তার বেশি</strong> নিলে ডেলিভারি সম্পূর্ণ <span class="bg-emerald-600 text-white text-xs font-bold px-2 py-0.5 rounded">ফ্রি (FREE)</span></p>
+                    <p>• ৫ কেজির কম নিলে ডেলিভারি চার্জ <strong>4,500 Won</strong> প্রযোজ্য।</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 1: Product Menu -->
+        <section class="mb-7">
+            <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center gap-2.5">
+                    <span class="bg-emerald-800 text-amber-300 w-7 h-7 rounded-full flex items-center justify-center font-bold text-sm shadow">১</span>
+                    <h2 class="text-lg font-bold text-slate-900">মাংস নির্বাচন করুন (메뉴 선택)</h2>
+                </div>
+                <span class="text-xs font-medium text-slate-500">দাম প্রতি কেজি (Won/kg)</span>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+
+                <!-- Item 1: Goat Meat (ACTIVE) -->
+                <div class="bg-white rounded-2xl shadow-md border-2 border-emerald-600 p-4 flex flex-col justify-between relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-emerald-600 text-white text-[11px] font-bold px-3 py-1 rounded-bl-xl">
+                        স্টকে আছে (In Stock)
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="text-4xl bg-emerald-50 p-2 rounded-xl">🐐</span>
+                            <div>
+                                <h3 class="font-extrabold text-slate-900 text-base">ছাগলের মাংস</h3>
+                                <p class="text-xs font-medium text-slate-500">Goat Meat / 염소고기</p>
+                            </div>
+                        </div>
+                        <div class="my-3 bg-emerald-50/80 border border-emerald-100 rounded-xl px-3 py-2 flex items-center justify-between">
+                            <span class="text-xs font-semibold text-emerald-900">প্রতি কেজি মূল্য:</span>
+                            <span class="text-lg font-extrabold text-emerald-800">16,000 Won</span>
+                        </div>
+                    </div>
+
+                    <div class="pt-2 border-t border-slate-100">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs font-bold text-slate-700">পরিমাণ (কেজি):</span>
+                            <div class="flex items-center gap-2">
+                                <button type="button" onclick="changeQty(-1)" class="w-10 h-10 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-xl flex items-center justify-center active:scale-95 transition">-</button>
+                                <input type="number" id="qty-goat" value="1" min="0" step="0.5" oninput="calculateTotal()" class="w-16 h-10 text-center font-extrabold text-base text-emerald-950 bg-emerald-50 border border-emerald-300 rounded-xl focus:ring-2 focus:ring-emerald-600 outline-none">
+                                <button type="button" onclick="changeQty(1)" class="w-10 h-10 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white font-bold text-xl flex items-center justify-center active:scale-95 transition">+</button>
+                            </div>
+                        </div>
+                        <!-- Quick Select Pills -->
+                        <div class="flex items-center justify-end gap-1.5 mt-2.5">
+                            <span class="text-[11px] text-slate-400 mr-1">দ্রুত সিলেক্ট:</span>
+                            <button type="button" onclick="setQty(2)" class="text-xs font-semibold px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-emerald-100 text-slate-700 transition">2 kg</button>
+                            <button type="button" onclick="setQty(3)" class="text-xs font-semibold px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-emerald-100 text-slate-700 transition">3 kg</button>
+                            <button type="button" onclick="setQty(5)" class="text-xs font-bold px-2.5 py-1 rounded-lg bg-amber-100 hover:bg-amber-200 text-amber-900 border border-amber-300 transition">5 kg (ফ্রি ডেলিভারি)</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 2: Beef (Coming Soon) -->
+                <div class="bg-white/80 rounded-2xl shadow-sm border border-slate-200 p-4 flex flex-col justify-between opacity-85">
+                    <div>
+                        <div class="flex justify-between items-start mb-2">
+                            <div class="flex items-center gap-3">
+                                <span class="text-3xl bg-slate-100 p-2 rounded-xl">🐂</span>
+                                <div>
+                                    <h3 class="font-bold text-slate-800 text-base">গরুর মাংস</h3>
+                                    <p class="text-xs text-slate-500">Beef / 소고기</p>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-xs text-slate-500 mt-2">১০০% হালাল প্রিমিয়াম গরুর মাংস।</p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between">
+                        <span class="bg-slate-100 text-slate-600 text-xs font-bold px-3 py-1.5 rounded-lg">শীঘ্রই আসছে / দাম আপডেট হবে</span>
+                        <a href="tel:01040123303" class="text-xs font-bold text-emerald-700 hover:underline">জানতে কল করুন</a>
+                    </div>
+                </div>
+
+                <!-- Item 3: Sheep / Lamb (Coming Soon) -->
+                <div class="bg-white/80 rounded-2xl shadow-sm border border-slate-200 p-4 flex flex-col justify-between opacity-85">
+                    <div>
+                        <div class="flex justify-between items-start mb-2">
+                            <div class="flex items-center gap-3">
+                                <span class="text-3xl bg-slate-100 p-2 rounded-xl">🐑</span>
+                                <div>
+                                    <h3 class="font-bold text-slate-800 text-base">ভেড়ার মাংস</h3>
+                                    <p class="text-xs text-slate-500">Lamb / 양고기</p>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-xs text-slate-500 mt-2">টাটকা ও সতেজ হালাল ভেড়ার মাংস।</p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between">
+                        <span class="bg-slate-100 text-slate-600 text-xs font-bold px-3 py-1.5 rounded-lg">শীঘ্রই আসছে / দাম আপডেট হবে</span>
+                        <a href="tel:01040123303" class="text-xs font-bold text-emerald-700 hover:underline">জানতে কল করুন</a>
+                    </div>
+                </div>
+
+                <!-- Item 4: Chicken (Coming Soon) -->
+                <div class="bg-white/80 rounded-2xl shadow-sm border border-slate-200 p-4 flex flex-col justify-between opacity-85">
+                    <div>
+                        <div class="flex justify-between items-start mb-2">
+                            <div class="flex items-center gap-3">
+                                <span class="text-3xl bg-slate-100 p-2 rounded-xl">🐓</span>
+                                <div>
+                                    <h3 class="font-bold text-slate-800 text-base">মুরগির মাংস</h3>
+                                    <p class="text-xs text-slate-500">Halal Chicken / 닭고기</p>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-xs text-slate-500 mt-2">পরিষ্কার করা তাজা হালাল মুরগি।</p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between">
+                        <span class="bg-slate-100 text-slate-600 text-xs font-bold px-3 py-1.5 rounded-lg">শীঘ্রই আসছে / দাম আপডেট হবে</span>
+                        <a href="tel:01040123303" class="text-xs font-bold text-emerald-700 hover:underline">জানতে কল করুন</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Live Bill & Free Delivery Progress Card -->
+        <section class="bg-emerald-950 text-white rounded-2xl p-5 mb-7 shadow-lg border border-emerald-800">
+            <div class="flex items-center justify-between mb-3">
+                <h3 class="text-sm font-bold text-amber-300 uppercase tracking-wide">অর্ডার ও বিলের হিসাব (주문 요약)</h3>
+                <span id="delivery-badge" class="text-xs font-bold px-2.5 py-1 rounded-full bg-amber-500/20 text-amber-300 border border-amber-400/30">
+                    ডেলিভারি চার্জ: 4,500 Won
+                </span>
+            </div>
+
+            <!-- Free Delivery Progress Bar -->
+            <div id="free-delivery-box" class="bg-emerald-900/80 rounded-xl p-3 mb-4 border border-emerald-800">
+                <div class="flex justify-between text-xs mb-1.5">
+                    <span id="free-delivery-text" class="text-emerald-100 font-medium">আর <strong>4 কেজি</strong> নিলে ডেলিভারি চার্জ 4,500 Won ফ্রি!</span>
+                    <span id="free-delivery-percent" class="text-amber-300 font-bold">20%</span>
+                </div>
+                <div class="w-full bg-emerald-950 rounded-full h-2 overflow-hidden">
+                    <div id="free-delivery-bar" class="bg-gradient-to-r from-amber-400 to-emerald-400 h-2 rounded-full transition-all duration-300" style="width: 20%"></div>
+                </div>
+            </div>
+
+            <!-- Itemized Calculation -->
+            <div class="space-y-2 text-sm border-b border-emerald-800/80 pb-3 mb-3">
+                <div class="flex justify-between text-emerald-100">
+                    <span>ছাগলের মাংস (<span id="summary-qty">1</span> kg × 16,000 Won)</span>
+                    <span class="font-bold text-white"><span id="summary-subtotal">16,000</span> Won</span>
+                </div>
+                <div class="flex justify-between text-emerald-100">
+                    <span>ডেলিভারি চার্জ (배송비)</span>
+                    <span id="summary-delivery" class="font-bold text-amber-300">4,500 Won</span>
+                </div>
+            </div>
+
+            <div class="flex justify-between items-center">
+                <div>
+                    <span class="text-base font-bold text-white">সর্বমোট বিল (Total):</span>
+                    <p class="text-[11px] text-emerald-300">ব্যাংক ট্রান্সফারে পরিশোধযোগ্য</p>
+                </div>
+                <span class="text-2xl sm:text-3xl font-extrabold text-amber-400"><span id="summary-total">20,500</span> Won</span>
+            </div>
+        </section>
+
+        <!-- Step 2: Bank Payment Information -->
+        <section class="mb-7 bg-white rounded-2xl p-5 border border-slate-200 shadow-sm">
+            <div class="flex items-center gap-2.5 mb-3">
+                <span class="bg-emerald-800 text-amber-300 w-7 h-7 rounded-full flex items-center justify-center font-bold text-sm shadow">২</span>
+                <h2 class="text-lg font-bold text-slate-900">ব্যাংক পেমেন্ট তথ্য (계좌이체 안내)</h2>
+            </div>
+
+            <div class="bg-rose-50 border border-rose-200 text-rose-800 text-xs font-semibold px-3.5 py-2.5 rounded-xl mb-4 flex items-center gap-2">
+                <i class="fa-solid fa-credit-card text-rose-600"></i>
+                <span>বিঃদ্রঃ কোনো কার্ড পেমেন্ট নেই। সরাসরি ব্যাংক অ্যাকাউন্টে টাকা পাঠিয়ে অর্ডার কনফার্ম করুন।</span>
+            </div>
+
+            <!-- Bank Card -->
+            <div class="bg-gradient-to-br from-slate-900 via-slate-800 to-emerald-950 text-white rounded-2xl p-5 mb-4 shadow-md relative overflow-hidden">
+                <div class="flex justify-between items-center border-b border-white/10 pb-3 mb-3">
+                    <div>
+                        <span class="text-[11px] uppercase tracking-wider text-amber-400 font-bold block">Bank Transfer Only</span>
+                        <h3 class="text-lg font-extrabold text-white mt-0.5">전북은행 (Jeonbuk Bank)</h3>
+                    </div>
+                    <i class="fa-solid fa-building-columns text-2xl text-amber-400/80"></i>
+                </div>
+
+                <div class="space-y-2.5 text-sm">
+                    <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1">
+                        <span class="text-slate-400 text-xs">অ্যাকাউন্ট নাম (예금주):</span>
+                        <span class="font-bold text-white tracking-wide">Rahman Mohammad mahfuzar</span>
+                    </div>
+
+                    <div class="bg-white/10 rounded-xl p-3 flex items-center justify-between gap-2 border border-white/10">
+                        <div>
+                            <span class="text-slate-300 text-[11px] block">অ্যাকাউন্ট নম্বর (계좌번호):</span>
+                            <span id="bank-acc-num" class="text-lg sm:text-xl font-extrabold text-amber-300 tracking-wider">1013013013405</span>
+                        </div>
+                        <button type="button" onclick="copyBankAccount()" class="bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold px-3.5 py-2 rounded-xl text-xs flex items-center gap-1.5 shadow transition active:scale-95 shrink-0">
+                            <i class="fa-regular fa-copy"></i>
+                            <span id="copy-acc-label">কপি করুন</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sender Reference Input -->
+            <div>
+                <label class="block text-sm font-bold text-slate-800 mb-1">
+                    ব্যাংকে টাকা পাঠানোর নাম / রেফারেন্স (입금자명) *
+                </label>
+                <input type="text" id="payment-ref" placeholder="যে নাম বা অ্যাকাউন্ট থেকে টাকা পাঠিয়েছেন তা লিখুন" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-emerald-600 focus:bg-white transition">
+                <p class="text-xs text-slate-500 mt-1.5">আমরা ব্যাংক অ্যাকাউন্ট চেক করে পেমেন্ট পাওয়ার সাথে সাথে আপনার অর্ডার কনফার্ম করব।</p>
+            </div>
+        </section>
+
+        <!-- Step 3: Customer & Delivery Form -->
+        <section class="mb-7 bg-white rounded-2xl p-5 border border-slate-200 shadow-sm">
+            <div class="flex items-center gap-2.5 mb-4">
+                <span class="bg-emerald-800 text-amber-300 w-7 h-7 rounded-full flex items-center justify-center font-bold text-sm shadow">৩</span>
+                <h2 class="text-lg font-bold text-slate-900">কাস্টমার ও ডেলিভারি ঠিকানা (배송지 정보)</h2>
+            </div>
+
+            <div class="space-y-4">
+                <div>
+                    <label class="block text-sm font-bold text-slate-700 mb-1">আপনার নাম (이름) *</label>
+                    <input type="text" id="cust-name" placeholder="আপনার পূর্ণ নাম লিখুন" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-emerald-600 focus:bg-white transition">
+                </div>
+
+                <div>
+                    <label class="block text-sm font-bold text-slate-700 mb-1">মোবাইল নাম্বার (전화번호) *</label>
+                    <input type="tel" id="cust-phone" placeholder="010-XXXX-XXXX" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-emerald-600 focus:bg-white transition">
+                </div>
+
+                <div>
+                    <label class="block text-sm font-bold text-slate-700 mb-1">ডেলিভারি ঠিকানা (배송 주소) *</label>
+                    <textarea id="cust-address" rows="2" placeholder="কোরিয়ান বা ইংরেজিতে সম্পূর্ণ ঠিকানা লিখুন (উদাঃ 강원도 영월군...)" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-emerald-600 focus:bg-white transition"></textarea>
+                </div>
+            </div>
+        </section>
+
+        <!-- Submit Buttons -->
+        <div class="space-y-3">
+            <button type="button" onclick="submitOrder('whatsapp')" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold py-4 px-5 rounded-2xl text-base shadow-lg hover:shadow-xl transition flex items-center justify-center gap-2.5 active:scale-98">
+                <i class="fa-brands fa-whatsapp text-2xl"></i>
+                <span>WhatsApp-এ অর্ডার কনফার্ম করুন</span>
+            </button>
+
+            <button type="button" onclick="submitOrder('copy')" class="w-full bg-slate-800 hover:bg-slate-900 text-white font-bold py-3.5 px-5 rounded-2xl text-sm transition flex items-center justify-center gap-2 shadow">
+                <i class="fa-regular fa-copy"></i>
+                <span>অর্ডার মেসেজ কপি করুন (SMS / Messenger / KakaoTalk)</span>
+            </button>
+        </div>
+
+        <!-- Custom Modal Alert -->
+        <div id="alert-box" class="hidden fixed inset-0 bg-slate-950/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+            <div class="bg-white rounded-2xl p-6 max-w-sm w-full text-center shadow-2xl border border-slate-100">
+                <div id="alert-icon" class="text-4xl mb-3">⚠️</div>
+                <h3 id="alert-title" class="font-extrabold text-slate-900 text-lg mb-2">বিজ্ঞপ্তি</h3>
+                <p id="alert-msg" class="text-sm text-slate-600 leading-relaxed mb-6"></p>
+                <button type="button" onclick="closeAlert()" class="w-full bg-emerald-700 hover:bg-emerald-800 text-white font-bold py-3 rounded-xl text-sm transition">ঠিক আছে</button>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Shop Footer -->
+    <footer class="max-w-3xl mx-auto px-4 mt-12 text-center border-t border-slate-200 pt-6 text-xs text-slate-500 space-y-1">
+        <p class="font-bold text-slate-700 text-sm">MM HALAL MEAT</p>
+        <p>📍 강원도 영월군 북면 1길 50</p>
+        <p>📞 <a href="tel:01040123303" class="text-emerald-700 font-bold">010-4012-3303</a></p>
+    </footer>
+
+    <!-- Application Logic -->
+    <script>
+        // Shop Configuration
+        const SHOP_WHATSAPP = "821040123303"; // South Korea (+82) + 1040123303
+        const GOAT_PRICE_PER_KG = 16000;
+        const FREE_DELIVERY_MIN_KG = 5;
+        const DELIVERY_FEE = 4500;
+
+        // Format number with commas (e.g., 16,000)
+        function formatWon(amount) {
+            return amount.toLocaleString('en-US');
+        }
+
+        // Increase or decrease quantity
+        function changeQty(delta) {
+            const input = document.getElementById('qty-goat');
+            let current = parseFloat(input.value) || 0;
+            let updated = Math.max(0, current + delta);
+            input.value = updated;
+            calculateTotal();
+        }
+
+        // Quick set quantity
+        function setQty(kg) {
+            document.getElementById('qty-goat').value = kg;
+            calculateTotal();
+        }
+
+        // Recalculate Subtotal, Delivery Charge & Grand Total
+        function calculateTotal() {
+            const qtyInput = document.getElementById('qty-goat');
+            let qty = parseFloat(qtyInput.value);
+            if (isNaN(qty) || qty < 0) qty = 0;
+
+            const subtotal = Math.round(qty * GOAT_PRICE_PER_KG);
+            let delivery = 0;
+
+            if (qty > 0 && qty < FREE_DELIVERY_MIN_KG) {
+                delivery = DELIVERY_FEE;
+            } else {
+                delivery = 0;
+            }
+
+            const grandTotal = subtotal + delivery;
+
+            // Update Summary Numbers
+            document.getElementById('summary-qty').innerText = qty;
+            document.getElementById('summary-subtotal').innerText = formatWon(subtotal);
+
+            const deliveryEl = document.getElementById('summary-delivery');
+            const badgeEl = document.getElementById('delivery-badge');
+
+            if (qty === 0) {
+                deliveryEl.innerText = "0 Won";
+                deliveryEl.className = "font-bold text-slate-300";
+                badgeEl.innerText = "আইটেম সিলেক্ট করুন";
+                badgeEl.className = "text-xs font-bold px-2.5 py-1 rounded-full bg-white/10 text-slate-300";
+            } else if (qty >= FREE_DELIVERY_MIN_KG) {
+                deliveryEl.innerText = "ফ্রি (0 Won)";
+                deliveryEl.className = "font-extrabold text-emerald-400";
+                badgeEl.innerText = "🎉 ফ্রি ডেলিভারি আনলক হয়েছে!";
+                badgeEl.className = "text-xs font-bold px-2.5 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-400/40";
+            } else {
+                deliveryEl.innerText = `${formatWon(DELIVERY_FEE)} Won`;
+                deliveryEl.className = "font-bold text-amber-300";
+                badgeEl.innerText = `ডেলিভারি চার্জ: ${formatWon(DELIVERY_FEE)} Won`;
+                badgeEl.className = "text-xs font-bold px-2.5 py-1 rounded-full bg-amber-500/20 text-amber-300 border border-amber-400/30";
+            }
+
+            document.getElementById('summary-total').innerText = formatWon(grandTotal);
+
+            // Update Free Delivery Progress Bar
+            const progressText = document.getElementById('free-delivery-text');
+            const progressPercent = document.getElementById('free-delivery-percent');
+            const progressBar = document.getElementById('free-delivery-bar');
+
+            const pct = Math.min(100, Math.round((qty / FREE_DELIVERY_MIN_KG) * 100));
+            progressPercent.innerText = `${pct}%`;
+            progressBar.style.width = `${pct}%`;
+
+            if (qty >= FREE_DELIVERY_MIN_KG) {
+                progressText.innerHTML = `<span class="text-emerald-300 font-bold">✅ অভিনন্দন! আপনি ফ্রি ডেলিভারি পাচ্ছেন।</span>`;
+            } else {
+                const remaining = (FREE_DELIVERY_MIN_KG - qty).toFixed(1).replace(/\.0$/, '');
+                progressText.innerHTML = `আর <strong>${remaining} কেজি</strong> নিলে ডেলিভারি চার্জ 4,500 Won ফ্রি!`;
+            }
+        }
+
+        // Copy Bank Account Number
+        function copyBankAccount() {
+            const accNum = "1013013013405";
+            const temp = document.createElement('textarea');
+            temp.value = accNum;
+            document.body.appendChild(temp);
+            temp.select();
+            try {
+                document.execCommand('copy');
+                const label = document.getElementById('copy-acc-label');
+                label.innerText = "কপি হয়েছে!";
+                setTimeout(() => {
+                    label.innerText = "কপি করুন";
+                }, 2000);
+            } catch (e) {
+                showAlert("কপি ত্রুটি", "অ্যাকাউন্ট নম্বরটি নিজে কপি করে নিন: 1013013013405");
+            }
+            document.body.removeChild(temp);
+        }
+
+        // Modal Alert Helpers
+        function showAlert(title, msg, icon = "⚠️") {
+            document.getElementById('alert-title').innerText = title;
+            document.getElementById('alert-msg').innerText = msg;
+            document.getElementById('alert-icon').innerText = icon;
+            document.getElementById('alert-box').classList.remove('hidden');
+        }
+
+        function closeAlert() {
+            document.getElementById('alert-box').classList.add('hidden');
+        }
+
+        // Validate & Generate Order Receipt Text
+        function generateOrderReceipt() {
+            const qty = parseFloat(document.getElementById('qty-goat').value) || 0;
+            const name = document.getElementById('cust-name').value.trim();
+            const phone = document.getElementById('cust-phone').value.trim();
+            const address = document.getElementById('cust-address').value.trim();
+            const paymentRef = document.getElementById('payment-ref').value.trim();
+
+            if (qty <= 0) {
+                showAlert("পরিমাণ নির্বাচন করুন", "অনুগ্রহ করে কমপক্ষে ১ কেজি ছাগলের মাংস সিলেক্ট করুন।");
+                return null;
+            }
+
+            if (!paymentRef) {
+                showAlert("ব্যাংক পেমেন্ট তথ্য দিন", "전북은행 (1013013013405) অ্যাকাউন্টে টাকা পাঠানোর পর প্রেরকের নাম বা রেফারেন্স লিখুন।");
+                return null;
+            }
+
+            if (!name || !phone || !address) {
+                showAlert("ঠিকানা ও তথ্য অসম্পূর্ণ", "অনুগ্রহ করে আপনার নাম, মোবাইল নাম্বার এবং ডেলিভারি ঠিকানা সঠিকভাবে লিখুন।");
+                return null;
+            }
+
+            const subtotal = Math.round(qty * GOAT_PRICE_PER_KG);
+            const delivery = qty >= FREE_DELIVERY_MIN_KG ? 0 : DELIVERY_FEE;
+            const grandTotal = subtotal + delivery;
+            const deliveryText = delivery === 0 ? "ফ্রি (0 Won)" : `${formatWon(delivery)} Won`;
+
+            let msg = `🥩 *MM HALAL MEAT - নতুন অর্ডার* 🥩\n`;
+            msg += `━━━━━━━━━━━━━━━━━━━━\n`;
+            msg += `*অর্ডার বিবরণ:*\n`;
+            msg += `• ছাগলের মাংস (Goat Meat): ${qty} kg\n`;
+            msg += `• মাংসের দাম: ${formatWon(subtotal)} Won\n`;
+            msg += `• ডেলিভারি চার্জ: ${deliveryText}\n`;
+            msg += `*মোট বিল: ${formatWon(grandTotal)} Won*\n`;
+            msg += `━━━━━━━━━━━━━━━━━━━━\n`;
+            msg += `*ব্যাংক পেমেন্ট তথ্য:*\n`;
+            msg += `🏦 ব্যাংক: 전북은행 (1013013013405)\n`;
+            msg += `💳 প্রেরকের নাম/রেফারেন্স: ${paymentRef}\n`;
+            msg += `━━━━━━━━━━━━━━━━━━━━\n`;
+            msg += `*কাস্টমার তথ্য:*\n`;
+            msg += `👤 নাম: ${name}\n`;
+            msg += `📞 ফোন: ${phone}\n`;
+            msg += `📍 ঠিকানা: ${address}\n`;
+            msg += `━━━━━━━━━━━━━━━━━━━━\n`;
+            msg += `অনুগ্রহ করে ব্যাংক অ্যাকাউন্ট চেক করে অর্ডারটি কনফার্ম করবেন। ধন্যবাদ!`;
+
+            return msg;
+        }
+
+        // Submit Order via WhatsApp or Copy
+        function submitOrder(mode) {
+            const receipt = generateOrderReceipt();
+            if (!receipt) return;
+
+            if (mode === 'whatsapp') {
+                const url = `https://wa.me/${SHOP_WHATSAPP}?text=${encodeURIComponent(receipt)}`;
+                window.open(url, '_blank');
+            } else if (mode === 'copy') {
+                const temp = document.createElement('textarea');
+                temp.value = receipt;
+                document.body.appendChild(temp);
+                temp.select();
+                try {
+                    document.execCommand('copy');
+                    showAlert(
+                        "অর্ডার মেসেজ কপি হয়েছে!",
+                        "মেসেজটি কপি করা হয়েছে। এখন আপনি 010-4012-3303 নম্বরে SMS, KakaoTalk বা Messenger-এ পেস্ট করে পাঠিয়ে দিন।",
+                        "✅"
+                    );
+                } catch (err) {
+                    showAlert("ত্রুটি", "কপি করা সম্ভব হয়নি, অনুগ্রহ করে WhatsApp বাটনটি ব্যবহার করুন।");
+                }
+                document.body.removeChild(temp);
+            }
+        }
+
+        // Initialize totals on page load
+        window.onload = function() {
+            calculateTotal();
+        };
+    </script>
+</body>
+</html>
